@@ -16,19 +16,42 @@ const defaultTodos = [
 
 
 function App() {
+
+
+  //! De que tipo son los estados?
+  const [todos, setTodos]= React.useState(defaultTodos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  //! De que tipo son los estados derivados?
+  const completedTodos = todos.filter((todo)=> todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log('Los usuarios buscan to-dos con: ' + searchValue);
+
+  const createTodoList = (array)=>{
+    return array.map((todo)=>{
+      return <TodoItem
+        key={todo.text}
+        text={todo.text}
+        completed={todo.completed}/>
+    })
+  }
+
+
   return (
     <React.Fragment>
-      <TodoCounter  total={25} completed={16} />
-      <TodoSearch />
+      <TodoCounter  total={totalTodos} completed={completedTodos} />
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
+      //! Porque vuelve a renderizar?
+      //! Porque se meustran todos los todos cuando no se ha escrito nada en el input?
       <TodoList>
-        {defaultTodos.map(todo => (
-          <TodoItem 
-          key={todo.text} 
-          text = {todo.text}
-          completed = {todo.completed}
-          />
-        ))}
+        {createTodoList(todos.filter((todo)=>{
+          return todo.text.toLowerCase().includes(searchValue.toLowerCase());
+        }))}
       </TodoList>
 
       <CreateTodoButton />
