@@ -14,27 +14,29 @@ This is a simple TODO List application built with React. The application allows 
 
 To get started with this project, clone the repository and install the dependencies:
 
+```bash
 git clone https://github.com/OFFICIAL-SBC/curso-react-intro
 cd curso-react-intro
 npm install
+```
+## Components
 
-## Installation
-# App
+App
 The App component is the main component that manages the state of the TODO list and renders the other components.
 
-# TodoCounter
+TodoCounter
 The TodoCounter component displays the total number of TODO items and the number of completed TODO items.
 
-# TodoSearch
+TodoSearch
 The TodoSearch component provides a search input for filtering TODO items based on their text.
 
-# TodoList
+TodoList
 The TodoList component renders a list of TODO items.
 
-# TodoItem
+TodoItem
 The TodoItem component represents an individual TODO item.
 
-# TodoForm
+TodoForm
 The TodoForm component provides an input form for adding new TODO items.
 
 ## Contributing
