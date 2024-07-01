@@ -14,12 +14,11 @@ This is a simple TODO List application built with React. The application allows 
 
 To get started with this project, clone the repository and install the dependencies:
 
-```bash
 git clone https://github.com/OFFICIAL-SBC/curso-react-intro
 cd curso-react-intro
 npm install
 
-## Components
+## Installation
 # App
 The App component is the main component that manages the state of the TODO list and renders the other components.
 
