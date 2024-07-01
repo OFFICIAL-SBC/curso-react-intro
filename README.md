@@ -19,6 +19,11 @@ git clone https://github.com/OFFICIAL-SBC/curso-react-intro
 cd curso-react-intro
 npm install
 ```
+## Usage
+``` bash
+npm start
+```
+
 ## Components
 
 App
