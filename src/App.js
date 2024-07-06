@@ -33,6 +33,13 @@ function App() {
     setTodos(newTodos);
   }
 
+  const deleteTodo = (text)=>{
+    const newTodos = [...todos]
+    const indexTodo = todos.findIndex((element)=> element.text === text);
+    newTodos.splice(indexTodo, 1);
+    setTodos(newTodos);
+  }
+
   return (
     <React.Fragment>
       <TodoCounter  total={totalTodos} completed={completedTodos} />
@@ -51,6 +58,7 @@ function App() {
                 text={todo.text}
                 completed={todo.completed}
                 onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
                 />
             );
           })
